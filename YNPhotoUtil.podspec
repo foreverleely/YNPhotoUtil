@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YNPhotoUtil.podspec"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "A util for getting photo easily"
 
   # This description is used to generate tags and improve search results.
@@ -62,8 +62,8 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  # s.platform     = :ios
+  s.platform     = :ios, "7.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -115,8 +115,8 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "Photo"
-  # s.frameworks = "Photo.framework", "AnotherFramework"
+  # s.framework  = "Photo"
+  s.frameworks = 'Foundation', 'UIKit', 'Photos'
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
@@ -128,7 +128,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
