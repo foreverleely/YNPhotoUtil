@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint YNPhotoUtil.podspec.podspec' to ensure this is a
+#  Be sure to run `pod spec lint YNPhotoUtil.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "YNPhotoUtil.podspec"
-  s.version      = "0.0.4"
+  s.name         = "YNPhotoUtil"
+  s.version      = "0.0.5"
   s.summary      = "A util for getting photo easily"
 
   # This description is used to generate tags and improve search results.
