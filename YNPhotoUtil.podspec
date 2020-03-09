@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YNPhotoUtil"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "A util for getting photo easily"
 
   # This description is used to generate tags and improve search results.

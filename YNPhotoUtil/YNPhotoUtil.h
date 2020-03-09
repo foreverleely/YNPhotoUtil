@@ -19,8 +19,11 @@
  @param ascending 升序OR降序
  @return 排序后的集合
  */
-+ (NSArray<PHAsset *> *)getAllAssetWithAssetCollection:(PHAssetCollection *)assetCollection
-                                             ascending:(BOOL)ascending;
++ (NSArray<PHAsset *> *)getImageAssetWithAssetCollection:(PHAssetCollection *)assetCollection ascending:(BOOL)ascending;
+
++ (NSArray<PHAsset *> *)getAllAssetWithAssetCollection:(PHAssetCollection *)assetCollection ascending:(BOOL)ascending;
+
++ (NSArray<PHAsset *> *)getAssetsWithAssetCollection:(PHAssetCollection *)assetCollection mediaType:(PHAssetMediaType)mediaType ascending:(BOOL)ascending;
 
 /**
  获取asset对应的图片

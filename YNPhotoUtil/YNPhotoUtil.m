@@ -11,6 +11,11 @@
 @implementation YNPhotoUtil
 
 // 获取指定相册中照片
++ (NSArray<PHAsset *> *)getImageAssetWithAssetCollection:(PHAssetCollection *)assetCollection ascending:(BOOL)ascending
+{
+    return [YNPhotoUtil getAssetsWithAssetCollection:assetCollection mediaType:PHAssetMediaTypeImage ascending:ascending];
+}
+
 + (NSArray<PHAsset *> *)getAllAssetWithAssetCollection:(PHAssetCollection *)assetCollection ascending:(BOOL)ascending
 {
     // ascending:按照片创建时间排序 >> YES:升序 NO:降序
@@ -19,7 +24,20 @@
     option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:ascending]];
     PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:assetCollection options:option];
     [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (((PHAsset *)obj).mediaType == PHAssetMediaTypeImage) {
+        [assets addObject:obj];
+    }];
+    return assets;
+}
+
++ (NSArray<PHAsset *> *)getAssetsWithAssetCollection:(PHAssetCollection *)assetCollection mediaType:(PHAssetMediaType)mediaType ascending:(BOOL)ascending
+{
+    // ascending:按照片创建时间排序 >> YES:升序 NO:降序
+    NSMutableArray<PHAsset *> *assets = [NSMutableArray array];
+    PHFetchOptions *option = [[PHFetchOptions alloc] init];
+    option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:ascending]];
+    PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:assetCollection options:option];
+    [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (((PHAsset *)obj).mediaType == mediaType) {
             [assets addObject:obj];
         }
     }];
